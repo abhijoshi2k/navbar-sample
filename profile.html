@@ -140,6 +140,7 @@
 
 			function navchange() {
 				if (window.innerWidth > 850 && window.scrollY > 2) {
+					document.getElementById('nav-buffer').style.height = '70px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'13px';
 					document.getElementById('nav-logo-image').style.height =
@@ -149,6 +150,7 @@
 					document.getElementById('navbar').style.height = '70px';
 					$('.nav-drop-down').css('top', '67px');
 				} else if (window.innerWidth > 850 && window.scrollY <= 2) {
+					document.getElementById('nav-buffer').style.height = '83px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'17px';
 					document.getElementById('nav-logo-image').style.height =
@@ -158,6 +160,7 @@
 					document.getElementById('navbar').style.height = '83px';
 					$('.nav-drop-down').css('top', '80px');
 				} else {
+					document.getElementById('nav-buffer').style.height = '60px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'10px';
 					document.getElementById('nav-logo-image').style.height =
@@ -229,8 +232,7 @@
 				<a href="#" class="navbar-link dropdown-head">
 					<li class="navbar-list">
 						<div class="navbar-link-text d-inline">
-							Team
-							<i class="fas fa-caret-down dropdown-icon"></i>
+							Team <i class="fas fa-caret-down dropdown-icon"></i>
 						</div>
 					</li>
 
@@ -257,6 +259,7 @@
 		</nav>
 
 		<div class="w-100 position-fixed" id="notnav" onclick="menu();"></div>
+		<div id="nav-buffer" class="w-100"></div>
 
 		<!-- Active courses start -->
 
@@ -269,6 +272,7 @@
 				let x = document.getElementById('navbar');
 				navchange();
 				if (window.innerWidth > 850) {
+					document.getElementById('notnav').style.display = 'none';
 					x.style.maxHeight = '1000px';
 					document.getElementById('bar1').style.transform =
 						'rotate(0deg) translate(0px,0px)';
@@ -276,6 +280,7 @@
 						'rotate(0deg) translate(0px,0px)';
 					document.getElementById('bar2').style.opacity = '1';
 				} else {
+					document.getElementById('notnav').style.display = 'none';
 					x.style.maxHeight = '60px';
 					document.getElementById('bar1').style.transform =
 						'rotate(0deg) translate(0px,0px)';

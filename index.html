@@ -140,6 +140,7 @@
 
 			function navchange() {
 				if (window.innerWidth > 850 && window.scrollY > 2) {
+					document.getElementById('nav-buffer').style.height = '70px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'13px';
 					document.getElementById('nav-logo-image').style.height =
@@ -149,6 +150,7 @@
 					document.getElementById('navbar').style.height = '70px';
 					$('.nav-drop-down').css('top', '67px');
 				} else if (window.innerWidth > 850 && window.scrollY <= 2) {
+					document.getElementById('nav-buffer').style.height = '83px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'17px';
 					document.getElementById('nav-logo-image').style.height =
@@ -158,6 +160,7 @@
 					document.getElementById('navbar').style.height = '83px';
 					$('.nav-drop-down').css('top', '80px');
 				} else {
+					document.getElementById('nav-buffer').style.height = '60px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'10px';
 					document.getElementById('nav-logo-image').style.height =
@@ -257,9 +260,10 @@
 		</nav>
 
 		<div class="w-100 position-fixed" id="notnav" onclick="menu();"></div>
+		<div id="nav-buffer" class="w-100"></div>
 
 		<!--Header-->
-		<div class="header">
+		<div class="header pt-3">
 			<div class="container">
 				<h1 class="pt-5 pb-3">
 					Want to learn something but don't know where to start?
@@ -277,6 +281,7 @@
 			</div>
 		</div>
 		<!--Header Ends-->
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 		<script>
 			window.onresize = function () {

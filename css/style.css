@@ -82,8 +82,8 @@ body {
 }
 
 #reg-link {
-	background: #66fcf1;
-	color: #0b0c10;
+	background: #e85c41;
+	color: #fff;
 	margin-left: 6px;
 	padding: 2px 20px;
 	height: auto;
@@ -100,7 +100,7 @@ body {
 	position: absolute;
 	height: 2px;
 	width: 70%;
-	background: #66fcf1;
+	background: #e85c41;
 	left: 15%;
 	bottom: -4px;
 	transform-origin: right;
@@ -113,7 +113,7 @@ body {
 	position: absolute;
 	height: 2px;
 	width: 70%;
-	background: #66fcf1;
+	background: #e85c41;
 	left: 15%;
 	bottom: -4px;
 	transform-origin: right;
@@ -126,7 +126,7 @@ body {
 	position: absolute;
 	height: 2px;
 	width: 70%;
-	background: #66fcf1;
+	background: #e85c41;
 	left: 15%;
 	bottom: -4px;
 	transform-origin: left;
@@ -138,7 +138,7 @@ body {
 	position: absolute;
 	height: 2px;
 	width: 70%;
-	background: #66fcf1;
+	background: #e85c41;
 	left: 15%;
 	bottom: -4px;
 	transform-origin: right;
@@ -189,8 +189,8 @@ body {
 	}
 
 	#reg-list {
-		background: #66fcf1;
-		color: #0b0c10;
+		background: #e85c41;
+		color: #fff;
 	}
 }
 
@@ -205,6 +205,7 @@ body {
 
 .dropdown-icon {
 	transition: 0.5s;
+	color: #e85c41;
 }
 
 .dropdown-head:hover .dropdown-icon,
@@ -221,8 +222,8 @@ body {
 
 .navbar-drop-list {
 	padding: 10px 15px;
-	transition: 0.5s;
-	color: #66fcf1;
+	transition: 0.4s;
+	color: #e85c41;
 }
 
 .nav-drop-down {
@@ -285,6 +286,19 @@ body {
 	transition: 0.2s;
 }
 
+#nav-buffer {
+	height: 83px;
+	background: #0b0c10;
+	transition: 0.5s;
+}
+
+@media (max-width: 850px) {
+	#nav-buffer {
+		height: 60px;
+		background: #0b0c10;
+	}
+}
+
 /* HEADER */
 .header {
 	background: url('../images/Hero.jpg'), #0b0c10;
@@ -296,7 +310,6 @@ body {
 	position: relative;
 	font-family: 'Open Sans', sans-serif;
 	color: #ffffff;
-	padding-top: 90px;
 }
 .header h1 {
 	margin: 0;
@@ -327,9 +340,10 @@ body {
 }
 .get-started {
 	cursor: pointer;
+	user-select: none;
 }
 .yellow-button {
-	background-color: #66fcf1;
+	background-color: #e85c41;
 	border: none;
 	border-radius: 0 5px 5px 0;
 }
@@ -341,12 +355,6 @@ body {
 @media screen and (max-width: 991px) {
 	.header {
 		background-position: center;
-	}
-}
-
-@media screen and (max-width: 850px) {
-	.header {
-		padding-top: 70px;
 	}
 }
 
