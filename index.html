@@ -147,6 +147,11 @@
 					document.getElementById('navbar-ul').style.marginTop =
 						'22px';
 					document.getElementById('navbar').style.height = '70px';
+					document.getElementById('nav-buffer').style.height = '70px';
+					document.getElementById('navbar').style.background =
+						'#0b0c10';
+					document.getElementById('nav-buffer').style.background =
+						'#0b0c10';
 					$('.nav-drop-down').css('top', '67px');
 				} else if (window.innerWidth > 850 && window.scrollY <= 2) {
 					document.getElementById('nav-logo-image').style.marginTop =
@@ -156,7 +161,12 @@
 					document.getElementById('navbar-ul').style.marginTop =
 						'29px';
 					document.getElementById('navbar').style.height = '83px';
-					$('.nav-drop-down').css('top', '80px');
+					document.getElementById('nav-buffer').style.height = '83px';
+					document.getElementById('navbar').style.background =
+						'transparent';
+					document.getElementById('nav-buffer').style.background =
+						'transparent';
+					$('.nav-drop-down').css('top', '67px');
 				} else {
 					document.getElementById('nav-logo-image').style.marginTop =
 						'10px';
@@ -165,101 +175,129 @@
 					document.getElementById('navbar-ul').style.marginTop =
 						'60px';
 					document.getElementById('navbar').style.height = 'auto';
+					document.getElementById('nav-buffer').style.height = '60px';
+
 					$('.nav-drop-down').css('top', '0px');
+				}
+
+				if (window.innerWidth <= 850 && window.scrollY <= 2) {
+					document.getElementById('navbar').style.background =
+						'transparent';
+					document.getElementById('nav-buffer').style.background =
+						'transparent';
+				} else if (window.innerWidth <= 850 && window.scrollY > 2) {
+					document.getElementById('navbar').style.background =
+						'#0b0c10';
+					document.getElementById('nav-buffer').style.background =
+						'#0b0c10';
 				}
 			}
 		</script>
 	</head>
 	<body>
-		<nav class="position-fixed topnav" id="transparent-navbar">
-			<div class="nav-logo position-absolute">
-				<a href="#"
-					><img
-						src="images/ieeesiesblack.png"
-						class="nav-logo-img"
-						id="nav-logo-image"
-						alt=""
-				/></a>
-			</div>
+		<div class="header">
+			<nav class="position-fixed topnav" id="navbar">
+				<div class="nav-logo position-absolute">
+					<a href="#"
+						><img
+							src="images/ieeesiesblack.png"
+							class="nav-logo-img"
+							id="nav-logo-image"
+							alt=""
+					/></a>
+				</div>
 
-			<div class="toggle-bars position-absolute" onclick="menu();">
-				<div class="bar-1 bar" id="bar1"></div>
-				<div class="bar-2 bar" id="bar2"></div>
-				<div class="bar-3 bar" id="bar3"></div>
-			</div>
+				<div class="toggle-bars position-absolute" onclick="menu();">
+					<div class="bar-1 bar" id="bar1"></div>
+					<div class="bar-2 bar" id="bar2"></div>
+					<div class="bar-3 bar" id="bar3"></div>
+				</div>
 
-			<ul class="navbar-ul mb-0" id="navbar-ul">
-				<a href="#" class="navbar-link">
-					<li class="navbar-list">
-						<div class="navbar-link-text d-inline">Home</div>
-					</li>
-				</a>
-				<a href="#" class="navbar-link">
-					<li class="navbar-list">
-						<div class="navbar-link-text d-inline">About</div>
-					</li>
-				</a>
-				<a href="#" class="navbar-link dropdown-head">
-					<li class="navbar-list">
-						<div class="navbar-link-text d-inline">
-							Explore
-							<i class="fas fa-caret-down dropdown-icon"></i>
-						</div>
-					</li>
-
-					<span class="nav-drop-down overflow-hidden">
-						<li class="navbar-drop-list">
-							<div class="navbar-link-text d-inline">Gallery</div>
+				<ul class="navbar-ul mb-0" id="navbar-ul">
+					<a href="#" class="navbar-link">
+						<li class="navbar-list">
+							<div class="navbar-link-text d-inline">Home</div>
 						</li>
-						<li class="navbar-drop-list">
+					</a>
+					<a href="#" class="navbar-link">
+						<li class="navbar-list">
+							<div class="navbar-link-text d-inline">About</div>
+						</li>
+					</a>
+					<a href="#" class="navbar-link dropdown-head">
+						<li class="navbar-list">
 							<div class="navbar-link-text d-inline">
-								Achievements
+								Explore
+								<i class="fas fa-caret-down dropdown-icon"></i>
 							</div>
 						</li>
-						<li class="navbar-drop-list">
+
+						<span class="nav-drop-down overflow-hidden">
+							<li class="navbar-drop-list">
+								<div class="navbar-link-text d-inline">
+									Gallery
+								</div>
+							</li>
+							<li class="navbar-drop-list">
+								<div class="navbar-link-text d-inline">
+									Achievements
+								</div>
+							</li>
+							<li class="navbar-drop-list">
+								<div class="navbar-link-text d-inline">
+									Techopedia
+								</div>
+							</li>
+							<li class="navbar-drop-list">
+								<div class="navbar-link-text d-inline">
+									Youtube
+								</div>
+							</li>
+						</span>
+					</a>
+					<a href="#" class="navbar-link dropdown-head">
+						<li class="navbar-list">
 							<div class="navbar-link-text d-inline">
-								Techopedia
+								Team
+								<i class="fas fa-caret-down dropdown-icon"></i>
 							</div>
 						</li>
-						<li class="navbar-drop-list">
-							<div class="navbar-link-text d-inline">Youtube</div>
-						</li>
-					</span>
-				</a>
-				<a href="#" class="navbar-link dropdown-head">
-					<li class="navbar-list">
-						<div class="navbar-link-text d-inline">
-							Team
-							<i class="fas fa-caret-down dropdown-icon"></i>
-						</div>
-					</li>
 
-					<span class="nav-drop-down overflow-hidden">
-						<li class="navbar-drop-list">
-							<div class="navbar-link-text d-inline">2020</div>
+						<span class="nav-drop-down overflow-hidden">
+							<li class="navbar-drop-list">
+								<div class="navbar-link-text d-inline">
+									2020
+								</div>
+							</li>
+							<li class="navbar-drop-list">
+								<div class="navbar-link-text d-inline">
+									2019
+								</div>
+							</li>
+						</span>
+					</a>
+					<a href="#" class="navbar-link">
+						<li class="navbar-list">
+							<div class="navbar-link-text d-inline">Contact</div>
 						</li>
-						<li class="navbar-drop-list">
-							<div class="navbar-link-text d-inline">2019</div>
+					</a>
+					<a href="#" class="navbar-link" id="reg-link">
+						<li class="navbar-list" id="reg-list">
+							<div class="navbar-link-text d-inline">Login</div>
 						</li>
-					</span>
-				</a>
-				<a href="#" class="navbar-link">
-					<li class="navbar-list">
-						<div class="navbar-link-text d-inline">Contact</div>
-					</li>
-				</a>
-				<a href="#" class="navbar-link" id="reg-link">
-					<li class="navbar-list" id="reg-list">
-						<div class="navbar-link-text d-inline">Login</div>
-					</li>
-				</a>
-			</ul>
-		</nav>
+					</a>
+				</ul>
+			</nav>
 
-		<div class="w-100 position-fixed" id="notnav" onclick="menu();"></div>
+			<div
+				class="w-100 position-fixed"
+				id="notnav"
+				onclick="menu();"
+			></div>
+			<div id="nav-buffer" class="w-100"></div>
 
-		<!--Header-->
-		<div class="header pt-3">
+			<!--Header-->
+
 			<div class="container">
 				<h1 class="pt-5 pb-3">
 					Want to learn something but don't know where to start?

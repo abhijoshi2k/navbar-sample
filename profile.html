@@ -140,7 +140,6 @@
 
 			function navchange() {
 				if (window.innerWidth > 850 && window.scrollY > 2) {
-					document.getElementById('nav-buffer').style.height = '70px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'13px';
 					document.getElementById('nav-logo-image').style.height =
@@ -148,9 +147,9 @@
 					document.getElementById('navbar-ul').style.marginTop =
 						'22px';
 					document.getElementById('navbar').style.height = '70px';
+					document.getElementById('nav-buffer').style.height = '70px';
 					$('.nav-drop-down').css('top', '67px');
 				} else if (window.innerWidth > 850 && window.scrollY <= 2) {
-					document.getElementById('nav-buffer').style.height = '83px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'17px';
 					document.getElementById('nav-logo-image').style.height =
@@ -158,9 +157,9 @@
 					document.getElementById('navbar-ul').style.marginTop =
 						'29px';
 					document.getElementById('navbar').style.height = '83px';
+					document.getElementById('nav-buffer').style.height = '83px';
 					$('.nav-drop-down').css('top', '80px');
 				} else {
-					document.getElementById('nav-buffer').style.height = '60px';
 					document.getElementById('nav-logo-image').style.marginTop =
 						'10px';
 					document.getElementById('nav-logo-image').style.height =
@@ -168,6 +167,7 @@
 					document.getElementById('navbar-ul').style.marginTop =
 						'60px';
 					document.getElementById('navbar').style.height = 'auto';
+					document.getElementById('nav-buffer').style.height = '60px';
 					$('.nav-drop-down').css('top', '0px');
 				}
 			}

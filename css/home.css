@@ -13,7 +13,7 @@ body {
 	height: 83px;
 	top: 0;
 	left: 0;
-	background: #0b0c10;
+	background: transparent;
 	width: 100%;
 	z-index: 1000;
 	overflow: hidden;
@@ -150,7 +150,7 @@ body {
 	.topnav {
 		height: auto;
 		max-height: 60px;
-		transition: 1s ease-in;
+		transition: 0.3s ease-in;
 	}
 
 	.nav-logo-img {
@@ -196,7 +196,7 @@ body {
 
 .nav-drop-down {
 	position: fixed;
-	top: 80px;
+	top: 67px;
 	background: #1f2833;
 	transform: scaleY(0);
 	transform-origin: top;
@@ -284,6 +284,19 @@ body {
 	z-index: 999;
 	display: none;
 	transition: 0.2s;
+}
+
+#nav-buffer {
+	height: 83px;
+	background: transparent;
+	transition: 0.5s;
+}
+
+@media (max-width: 850px) {
+	#nav-buffer {
+		height: 60px;
+		transition: 0.3s;
+	}
 }
 
 /* HEADER */
