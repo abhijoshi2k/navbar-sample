@@ -286,19 +286,6 @@ body {
 	transition: 0.2s;
 }
 
-#nav-buffer {
-	height: 83px;
-	background: #0b0c10;
-	transition: 0.5s;
-}
-
-@media (max-width: 850px) {
-	#nav-buffer {
-		height: 60px;
-		background: #0b0c10;
-	}
-}
-
 /* HEADER */
 .header {
 	background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
