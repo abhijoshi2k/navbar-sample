@@ -110,6 +110,8 @@
 					x.style.maxHeight == '' ||
 					x.style.height == '60px'
 				) {
+					document.getElementById('navbar').style.background =
+						'#0b0c10';
 					document.getElementById('notnav').style.display = 'block';
 
 					x.style.maxHeight = ' 1000px';
@@ -134,6 +136,7 @@
 					setTimeout(function () {
 						x.style.transition = '';
 						x.style.transition = '1s ease-in;';
+						navchange();
 					}, 500);
 				}
 			}
@@ -181,10 +184,17 @@
 				}
 
 				if (window.innerWidth <= 850 && window.scrollY <= 2) {
-					document.getElementById('navbar').style.background =
-						'transparent';
-					document.getElementById('nav-buffer').style.background =
-						'transparent';
+					let x = document.getElementById('navbar');
+					if (
+						x.style.maxHeight == '60px' ||
+						x.style.maxHeight == '' ||
+						x.style.height == '60px'
+					) {
+						document.getElementById('navbar').style.background =
+							'transparent';
+						document.getElementById('nav-buffer').style.background =
+							'transparent';
+					}
 				} else if (window.innerWidth <= 850 && window.scrollY > 2) {
 					document.getElementById('navbar').style.background =
 						'#0b0c10';
@@ -233,22 +243,34 @@
 						</li>
 
 						<span class="nav-drop-down overflow-hidden">
-							<li class="navbar-drop-list">
+							<li
+								class="navbar-drop-list"
+								onclick="location.href='#'"
+							>
 								<div class="navbar-link-text d-inline">
 									Gallery
 								</div>
 							</li>
-							<li class="navbar-drop-list">
+							<li
+								class="navbar-drop-list"
+								onclick="location.href='#'"
+							>
 								<div class="navbar-link-text d-inline">
 									Achievements
 								</div>
 							</li>
-							<li class="navbar-drop-list">
+							<li
+								class="navbar-drop-list"
+								onclick="location.href='#'"
+							>
 								<div class="navbar-link-text d-inline">
 									Techopedia
 								</div>
 							</li>
-							<li class="navbar-drop-list">
+							<li
+								class="navbar-drop-list"
+								onclick="location.href='#'"
+							>
 								<div class="navbar-link-text d-inline">
 									Youtube
 								</div>
@@ -264,12 +286,18 @@
 						</li>
 
 						<span class="nav-drop-down overflow-hidden">
-							<li class="navbar-drop-list">
+							<li
+								class="navbar-drop-list"
+								onclick="location.href='#'"
+							>
 								<div class="navbar-link-text d-inline">
 									2020
 								</div>
 							</li>
-							<li class="navbar-drop-list">
+							<li
+								class="navbar-drop-list"
+								onclick="location.href='#'"
+							>
 								<div class="navbar-link-text d-inline">
 									2019
 								</div>
@@ -300,13 +328,33 @@
 
 			<div class="container">
 				<h1 class="pt-5 pb-3">
-					Want to learn something but don't know where to start?
+					<span class="d-inline-block">Welcome To</span>
+					<span class="d-inline-block">IEEE SIES GST</span>
+					<span class="d-inline-block">Student Branch</span>
 				</h1>
-				<p>Join us in the amazing journey of learning.</p>
-				<p>What are you waiting for?</p>
-				<div class="pb-5">
+				<p>
+					Join us in an amazing journey of learning through
+					competitions, workshops, seminars and much more...
+				</p>
+				<p class="home-banner-notif mb-1">
+					News:
+					<a href="#">New YouTube Video uploaded on our channel</a>
+				</p>
+				<p class="home-banner-notif mb-1">
+					Update:
+					<a href="#"
+						>XYZ Event Registrations extended. Register now!</a
+					>
+				</p>
+				<p class="home-banner-notif mb-1">
+					Update:
+					<a href="#"
+						>XYZ Event Registrations extended. Register now!</a
+					>
+				</p>
+				<div class="pb-5 pt-4">
 					<div class="get-started" onclick="location.href='#'">
-						<h4>Get Started</h4>
+						<h4>Ongoing Events</h4>
 						<button class="yellow-button">
 							<i class="fa fa-angle-right"></i>
 						</button>
