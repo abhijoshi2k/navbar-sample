@@ -370,19 +370,15 @@
 				navchange();
 				if (window.innerWidth > 850) {
 					x.style.maxHeight = '1000px';
-					document.getElementById('bar1').style.transform =
-						'rotate(0deg) translate(0px,0px)';
-					document.getElementById('bar3').style.transform =
-						'rotate(0deg) translate(0px,0px)';
-					document.getElementById('bar2').style.opacity = '1';
 				} else {
 					x.style.maxHeight = '60px';
-					document.getElementById('bar1').style.transform =
-						'rotate(0deg) translate(0px,0px)';
-					document.getElementById('bar3').style.transform =
-						'rotate(0deg) translate(0px,0px)';
-					document.getElementById('bar2').style.opacity = '1';
 				}
+				document.getElementById('bar1').style.transform =
+					'rotate(0deg) translate(0px,0px)';
+				document.getElementById('bar3').style.transform =
+					'rotate(0deg) translate(0px,0px)';
+				document.getElementById('bar2').style.opacity = '1';
+				document.getElementById('notnav').style.display = 'none';
 			};
 
 			window.onscroll = function () {
