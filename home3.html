@@ -81,7 +81,7 @@
 		></script>
 
 		<!-- CSS -->
-		<link rel="stylesheet" href="css/home2.css" />
+		<link rel="stylesheet" href="css/home3.css" />
 
 		<!-- Google Fonts -->
 		<link
@@ -205,7 +205,8 @@
 		</script>
 	</head>
 	<body>
-		<div class="header">
+		<div class="header position-relative overflow-hidden" id="home-header">
+			<div class="bg-move-home w-100 h-100 position-absolute"></div>
 			<nav class="position-fixed topnav" id="navbar">
 				<div class="nav-logo position-absolute">
 					<a href="#"
@@ -326,29 +327,34 @@
 
 			<!--Header-->
 
-			<div class="container">
+			<div
+				class="container text-center position-absolute w-100 header-content"
+			>
 				<h1 class="pt-5 pb-3 home-banner-h1">
 					<span class="d-inline-block">IEEE SIES GST</span>
 					<span class="d-inline-block">Student Branch</span>
 				</h1>
-				<p class="home-banner-sub">
+				<p class="home-banner-sub pt-4 pb-3">
 					Join us in an amazing journey of learning through
-					competitions, workshops, seminars and much more...
+					competitions, workshops, seminars
+					<span class="d-inline-block">and much more...</span>
 				</p>
 				<div class="pb-5 pt-4">
-					<a
-						href="#"
-						class="btn btn-light"
-						style="
-							font-family: Roboto;
-							font-weight: 600;
-							border-radius: 0;
-						"
-						>Know More</a
+					<div
+						class="home-banner-btn btn p-0 position-relative"
+						onclick="if(window.innerWidth>850){window.scrollTo(0, document.getElementById('scroll-from-banner').offsetTop - 70)}else{window.scrollTo(0, document.getElementById('scroll-from-banner').offsetTop - 60)}"
 					>
+						<div
+							class="banner-down-left banner-down mx-auto position-absolute"
+						></div>
+						<div
+							class="banner-down-right banner-down mx-auto position-absolute"
+						></div>
+					</div>
 				</div>
 			</div>
 		</div>
+		<div id="scroll-from-banner" class="w-100"></div>
 		<!--Header Ends-->
 		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
@@ -376,6 +382,42 @@
 			window.onscroll = function () {
 				navchange();
 			};
+
+			var lFollowX = 0,
+				lFollowY = 0,
+				x = 0,
+				y = 0,
+				friction = 1 / 30;
+
+			function moveBackground() {
+				x += (lFollowX - x) * friction;
+				y += (lFollowY - y) * friction;
+
+				translate = 'translate(' + x + 'px, ' + y + 'px) scale(1.2)';
+
+				$('.bg-move-home').css({
+					'-webit-transform': translate,
+					'-moz-transform': translate,
+					transform: translate
+				});
+
+				window.requestAnimationFrame(moveBackground);
+			}
+
+			$(window).on('mousemove click', function (e) {
+				var lMouseX = Math.max(
+					-100,
+					Math.min(100, $(window).width() / 2 - e.clientX)
+				);
+				var lMouseY = Math.max(
+					-100,
+					Math.min(100, $(window).height() / 2 - e.clientY)
+				);
+				lFollowX = (50 * lMouseX) / 100; // 100 : 12 = lMouxeX : lFollow
+				lFollowY = (40 * lMouseY) / 100;
+			});
+
+			moveBackground();
 		</script>
 	</body>
 </html>
