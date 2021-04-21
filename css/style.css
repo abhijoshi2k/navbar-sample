@@ -1,11 +1,15 @@
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	top: 0;
 	left: 0;
-	scroll-behavior: smooth;
 	margin: 0;
 	font-size: 100%;
 	font-family: sans-serif;
 	background: #fff;
+	padding: 0 !important;
 }
 
 /*Navbar*/
@@ -296,4 +300,51 @@ body {
 	#nav-buffer {
 		height: 60px;
 	}
+}
+
+@media (min-width: 576px) {
+	.login-dialog {
+		max-width: 400px;
+	}
+	.login-dialog .login-body {
+		padding: 1rem;
+	}
+}
+
+.delimiter-login {
+	padding: 1rem;
+}
+
+.signin-google {
+	background-color: #dd4b39;
+	color: white;
+}
+
+.signin-google:hover {
+	color: white;
+}
+
+.signin-microsoft:hover {
+	color: white;
+}
+
+.signin-microsoft {
+	background-color: #000000;
+	color: white;
+}
+
+.signup-section {
+	padding: 0.3rem 0rem;
+}
+.login-body {
+	background-color: white;
+	color: black;
+}
+.login-button {
+	background-color: #c65039;
+	border-radius: 3rem;
+}
+
+.close-btn-login {
+	cursor: pointer;
 }
