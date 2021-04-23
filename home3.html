@@ -100,41 +100,46 @@
 
 		<script type="text/javascript">
 			function menu() {
-				let x = document.getElementById('navbar');
+				if (window.innerWidth <= 850) {
+					let x = document.getElementById('navbar');
 
-				if (
-					x.style.maxHeight == '60px' ||
-					x.style.maxHeight == '' ||
-					x.style.height == '60px'
-				) {
-					document.getElementById('navbar').style.background =
-						'#0b0c10';
-					document.getElementById('notnav').style.display = 'block';
+					if (
+						x.style.maxHeight == '60px' ||
+						x.style.maxHeight == '' ||
+						x.style.height == '60px'
+					) {
+						document.getElementById('navbar').style.background =
+							'#0b0c10';
+						document.getElementById('notnav').style.display =
+							'block';
 
-					x.style.maxHeight = ' 1000px';
-					document.getElementById('bar1').style.transform =
-						'rotate(-405deg) translate(-3px,7px)';
-					document.getElementById('bar3').style.transform =
-						'rotate(405deg) translate(-3px,-7px)';
-					document.getElementById('bar2').style.opacity = '0';
-					setTimeout(function () {
-						x.style.transition = '';
-						x.style.transition = '0.5s cubic-bezier(0, 1, 0, 1)';
-					}, 500);
-				} else {
-					document.getElementById('notnav').style.display = 'none';
+						x.style.maxHeight = ' 1000px';
+						document.getElementById('bar1').style.transform =
+							'rotate(-405deg) translate(-3px,7px)';
+						document.getElementById('bar3').style.transform =
+							'rotate(405deg) translate(-3px,-7px)';
+						document.getElementById('bar2').style.opacity = '0';
+						setTimeout(function () {
+							x.style.transition = '';
+							x.style.transition =
+								'0.5s cubic-bezier(0, 1, 0, 1)';
+						}, 500);
+					} else {
+						document.getElementById('notnav').style.display =
+							'none';
 
-					x.style.maxHeight = '60px';
-					document.getElementById('bar1').style.transform =
-						'rotate(0deg) translate(0px,0px)';
-					document.getElementById('bar3').style.transform =
-						'rotate(0deg) translate(0px,0px)';
-					document.getElementById('bar2').style.opacity = '1';
-					setTimeout(function () {
-						x.style.transition = '';
-						x.style.transition = '1s ease-in;';
-						navchange();
-					}, 500);
+						x.style.maxHeight = '60px';
+						document.getElementById('bar1').style.transform =
+							'rotate(0deg) translate(0px,0px)';
+						document.getElementById('bar3').style.transform =
+							'rotate(0deg) translate(0px,0px)';
+						document.getElementById('bar2').style.opacity = '1';
+						setTimeout(function () {
+							x.style.transition = '';
+							x.style.transition = '1s ease-in;';
+							navchange();
+						}, 500);
+					}
 				}
 			}
 
@@ -319,6 +324,7 @@
 						id="reg-link"
 						data-bs-toggle="modal"
 						data-bs-target="#loginModal"
+						onclick="menu()"
 					>
 						<li class="navbar-list" id="reg-list">
 							<div class="navbar-link-text d-inline">Login</div>
@@ -379,9 +385,9 @@
 				role="document"
 			>
 				<div class="modal-content login-body">
-					<div class="modal-header border-bottom-0 pt-1">
+					<div class="modal-header border-bottom-0 pt-sm-1 pt-3 pb-0">
 						<div
-							class="close pb-0 close-btn-login"
+							class="close pb-0 close-btn-login ms-auto"
 							data-bs-dismiss="modal"
 							aria-label="Close"
 						>
@@ -402,7 +408,7 @@
 							<a href="#" class="signin-microsoft btn"
 								><i class="fab fa-microsoft"></i> Sign in with
 								Microsoft <br /><small
-									>Only for SIESGST Students</small
+									>(Only for SIESGST Students)</small
 								></a
 							>
 
@@ -414,7 +420,7 @@
 									<div class="form-group">
 										<input
 											type="email"
-											class="form-control"
+											class="form-control mb-3"
 											id="email1"
 											placeholder="Your email address"
 										/>
@@ -422,14 +428,14 @@
 									<div class="form-group">
 										<input
 											type="password"
-											class="form-control"
+											class="form-control mb-3"
 											id="password1"
 											placeholder="Your password"
 										/>
 									</div>
 									<button
 										type="button"
-										class="btn btn-block btn-round login-button shadow-none text-white"
+										class="btn btn-block btn-round login-button shadow-none text-white w-100"
 									>
 										Login
 									</button>
@@ -512,6 +518,13 @@
 			});
 
 			moveBackground();
+
+			var loginModal = document.getElementById('loginModal');
+			loginModal.addEventListener('hide.bs.modal', function (event) {
+				setTimeout(() => {
+					document.getElementById('navbar').scrollTo(0, 0);
+				}, 350);
+			});
 		</script>
 	</body>
 </html>
