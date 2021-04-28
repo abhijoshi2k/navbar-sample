@@ -341,6 +341,13 @@ body {
 	}
 }
 
+.home-banner-btn-div {
+	transition: 0.6s;
+	width: 40px;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
 .home-banner-btn {
 	font-size: 50px;
 	background: #c5c6c7;
@@ -350,9 +357,9 @@ body {
 	transition: 0.6s;
 }
 
-.home-banner-btn:hover {
-	transform: translateY(10px);
+.home-banner-btn-div:hover {
 	opacity: 0.75;
+	padding-top: 20px;
 }
 
 .banner-down {
@@ -374,15 +381,15 @@ body {
 	transform: rotate(-45deg);
 }
 
-.home-banner-btn:hover .banner-down {
+.home-banner-btn-div:hover .banner-down {
 	width: 22px;
 }
 
-.home-banner-btn:hover .banner-down-left {
+.home-banner-btn-div:hover .banner-down-left {
 	transform: rotate(55deg);
 }
 
-.home-banner-btn:hover .banner-down-right {
+.home-banner-btn-div:hover .banner-down-right {
 	transform: rotate(-55deg);
 }
 
