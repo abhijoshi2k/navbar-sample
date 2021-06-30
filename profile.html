@@ -173,6 +173,20 @@
 					$('.nav-drop-down').css('top', '0px');
 				}
 			}
+
+			function addNavBorder() {
+				let footer = document.getElementsByTagName('footer')[0];
+				let navbar = $('#navbar');
+
+				if (
+					footer &&
+					footer.offsetTop < window.scrollY + navbar.height()
+				) {
+					navbar.css('border-bottom', '#222 solid 1px');
+				} else {
+					navbar.css('border-bottom', '#222 solid 0px');
+				}
+			}
 		</script>
 	</head>
 	<body>
@@ -180,7 +194,7 @@
 			<div class="nav-logo position-absolute">
 				<a href="#"
 					><img
-						src="images/ieeesiesblack.png"
+						src="/images/ieeesiesblack.png"
 						class="nav-logo-img"
 						id="nav-logo-image"
 						alt=""
@@ -249,10 +263,10 @@
 				</a>
 				<a href="#" class="navbar-link">
 					<li class="navbar-list">
-						<div class="navbar-link-text d-inline">Contact</div>
+						<div class="navbar-link-text d-inline">Contact Us</div>
 					</li>
 				</a>
-				<a
+				<!-- <a
 					href="javascript: void(0)"
 					class="navbar-link"
 					id="reg-link"
@@ -263,7 +277,7 @@
 					<li class="navbar-list" id="reg-list">
 						<div class="navbar-link-text d-inline">Login</div>
 					</li>
-				</a>
+				</a> -->
 			</ul>
 		</nav>
 
@@ -271,97 +285,8 @@
 		<div id="nav-buffer" class="w-100"></div>
 
 		<!-- LOGIN MODAL -->
-		<div
-			class="modal fade"
-			id="loginModal"
-			tabindex="-1"
-			role="dialog"
-			aria-labelledby="exampleModalLabel"
-			aria-hidden="false"
-		>
-			<div
-				class="modal-dialog modal-dialog-centered login-dialog pb-1"
-				role="document"
-			>
-				<div class="modal-content login-body">
-					<div class="modal-header border-bottom-0 pt-sm-1 pt-3 pb-0">
-						<div
-							class="close pb-0 close-btn-login ms-auto"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						>
-							<span aria-hidden="true">&times;</span>
-						</div>
-					</div>
-					<div class="modal-body pt-0">
-						<div class="form-title pb-3 text-center">
-							<h4>Login</h4>
-						</div>
 
-						<div class="d-flex flex-column text-center">
-							<a href="#" class="signin-google btn"
-								><i class="fab fa-google"></i> Sign in with
-								Google</a
-							>
-							<br />
-							<a href="#" class="signin-microsoft btn"
-								><i class="fab fa-microsoft"></i> Sign in with
-								Microsoft <br /><small
-									>(Only for SIESGST Students)</small
-								></a
-							>
-
-							<div class="text-center delimiter-login">OR</div>
-							<div
-								class="d-flex flex-column justify-content-center"
-							>
-								<form>
-									<div class="form-group">
-										<input
-											type="email"
-											class="form-control mb-3"
-											id="email1"
-											placeholder="Your email address"
-										/>
-									</div>
-									<div class="form-group">
-										<input
-											type="password"
-											class="form-control mb-3"
-											id="password1"
-											placeholder="Your password"
-										/>
-									</div>
-									<button
-										type="button"
-										class="btn btn-block btn-round login-button shadow-none text-white w-100"
-									>
-										Login
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div
-						class="modal-footer d-flex flex-column justify-content-center pt-1 pb-1"
-					>
-						<div class="signup-section pb-0">
-							Not a member yet?
-							<a href="#a"> Sign Up!</a>
-						</div>
-						<div class="signup-section pt-1 pb-3 pb-sm-0">
-							<a href="#a"> Forgot Password?</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-		<!-- Active courses start -->
-
-		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />a
-
-		<!-- Active courses end -->
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 		<script>
 			window.onresize = function () {
@@ -384,18 +309,23 @@
 						'rotate(0deg) translate(0px,0px)';
 					document.getElementById('bar2').style.opacity = '1';
 				}
+
+				addNavBorder();
 			};
 
 			window.onscroll = function () {
 				navchange();
+				addNavBorder();
 			};
 
 			var loginModal = document.getElementById('loginModal');
-			loginModal.addEventListener('hide.bs.modal', function (event) {
-				setTimeout(() => {
-					document.getElementById('navbar').scrollTo(0, 0);
-				}, 350);
-			});
+			if (loginModal) {
+				loginModal.addEventListener('hide.bs.modal', function (event) {
+					setTimeout(() => {
+						document.getElementById('navbar').scrollTo(0, 0);
+					}, 350);
+				});
+			}
 		</script>
 	</body>
 </html>

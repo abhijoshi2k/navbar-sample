@@ -204,6 +204,56 @@
 						'#0b0c10';
 				}
 			}
+
+			var strings = [
+				'``````````````````````IEEE SIES GST',
+				'Student Branch',
+				'``````````````````````````Join us in an amazing journey of learning through competitions, workshops, seminars',
+				'and much more...'
+			];
+			defaultSpeed = 50;
+
+			function typingEffect(iter, speed) {
+				let typer = setInterval(() => {
+					$('#typing' + iter).toggleClass('invisible');
+				}, 200);
+				let printed = 0;
+				let typeLine = setInterval(() => {
+					if (printed != strings[iter].length) {
+						if (strings[iter][printed] != '`') {
+							document.getElementById(
+								'banner-line' + iter
+							).innerHTML += strings[iter][printed];
+						}
+						printed += 1;
+					} else {
+						clearInterval(typeLine);
+						if (iter + 1 != strings.length) {
+							let speedNext = defaultSpeed;
+							if (iter > 0) {
+								speedNext = 25;
+							}
+							clearInterval(typer);
+							$('#typing' + iter).addClass('d-none');
+							typingEffect(iter + 1, speedNext);
+						}
+					}
+				}, speed);
+			}
+
+			function addNavBorder() {
+				let footer = document.getElementsByTagName('footer')[0];
+				let navbar = $('#navbar');
+
+				if (
+					footer &&
+					footer.offsetTop < window.scrollY + navbar.height()
+				) {
+					navbar.css('border-bottom', '#222 solid 1px');
+				} else {
+					navbar.css('border-bottom', '#222 solid 0px');
+				}
+			}
 		</script>
 	</head>
 	<body>
@@ -213,7 +263,7 @@
 				<div class="nav-logo position-absolute">
 					<a href="#"
 						><img
-							src="images/ieeesiesblack.png"
+							src="/images/ieeesiesblack.png"
 							class="nav-logo-img"
 							id="nav-logo-image"
 							alt=""
@@ -315,21 +365,23 @@
 					</a>
 					<a href="#" class="navbar-link">
 						<li class="navbar-list">
-							<div class="navbar-link-text d-inline">Contact</div>
+							<div class="navbar-link-text d-inline">
+								Contact Us
+							</div>
 						</li>
 					</a>
-					<a
-						href="javascript: void(0)"
-						class="navbar-link"
-						id="reg-link"
-						data-bs-toggle="modal"
-						data-bs-target="#loginModal"
-						onclick="menu()"
-					>
-						<li class="navbar-list" id="reg-list">
-							<div class="navbar-link-text d-inline">Login</div>
-						</li>
-					</a>
+					<!-- <a
+									href="javascript: void(0)"
+									class="navbar-link"
+									id="reg-link"
+									data-bs-toggle="modal"
+									data-bs-target="#loginModal"
+									onclick="menu()"
+							>
+									<li class="navbar-list" id="reg-list">
+											<div class="navbar-link-text d-inline">Login</div>
+									</li>
+							</a> -->
 				</ul>
 			</nav>
 
@@ -343,16 +395,41 @@
 			<!--Header-->
 
 			<div
-				class="container text-center position-absolute w-100 header-content"
+				class="
+					container
+					text-center
+					position-absolute
+					w-100
+					header-content
+				"
 			>
 				<h1 class="pt-5 pb-3 home-banner-h1">
-					<span class="d-inline-block">IEEE SIES GST</span>
-					<span class="d-inline-block">Student Branch</span>
+					<span class="d-inline-block">
+						<span id="banner-line0"> </span>
+						<span
+							class="typing-pipe invisible typing-translate"
+							id="typing0"
+							>|</span
+						>
+					</span>
+					<span class="d-inline-block">
+						<span id="banner-line1"> </span>
+						<span
+							class="typing-pipe invisible typing-translate"
+							id="typing1"
+							>|</span
+						>
+					</span>
 				</h1>
 				<p class="home-banner-sub pt-4 pb-3">
-					Join us in an amazing journey of learning through
-					competitions, workshops, seminars
-					<span class="d-inline-block">and much more...</span>
+					<span id="banner-line2"> </span>
+					<span class="typing-pipe invisible" id="typing2">|</span>
+					<span class="d-inline-block">
+						<span id="banner-line3"> </span>
+						<span class="typing-pipe invisible" id="typing3"
+							>|</span
+						>
+					</span>
 				</p>
 				<div class="pb-5 pt-4">
 					<div
@@ -361,10 +438,18 @@
 					>
 						<div class="home-banner-btn btn p-0 position-relative">
 							<div
-								class="banner-down-left banner-down mx-auto position-absolute"
+								class="
+									banner-down-left banner-down
+									mx-auto
+									position-absolute
+								"
 							></div>
 							<div
-								class="banner-down-right banner-down mx-auto position-absolute"
+								class="
+									banner-down-right banner-down
+									mx-auto
+									position-absolute
+								"
 							></div>
 						</div>
 					</div>
@@ -374,95 +459,10 @@
 		<div id="scroll-from-banner" class="w-100"></div>
 
 		<!-- LOGIN MODAL -->
-		<div
-			class="modal fade"
-			id="loginModal"
-			tabindex="-1"
-			role="dialog"
-			aria-labelledby="exampleModalLabel"
-			aria-hidden="false"
-		>
-			<div
-				class="modal-dialog modal-dialog-centered login-dialog pb-1"
-				role="document"
-			>
-				<div class="modal-content login-body">
-					<div class="modal-header border-bottom-0 pt-sm-1 pt-3 pb-0">
-						<div
-							class="close pb-0 close-btn-login ms-auto"
-							data-bs-dismiss="modal"
-							aria-label="Close"
-						>
-							<span aria-hidden="true">&times;</span>
-						</div>
-					</div>
-					<div class="modal-body pt-0">
-						<div class="form-title pb-3 text-center">
-							<h4>Login</h4>
-						</div>
 
-						<div class="d-flex flex-column text-center">
-							<a href="#" class="signin-google btn"
-								><i class="fab fa-google"></i> Sign in with
-								Google</a
-							>
-							<br />
-							<a href="#" class="signin-microsoft btn"
-								><i class="fab fa-microsoft"></i> Sign in with
-								Microsoft <br /><small
-									>(Only for SIESGST Students)</small
-								></a
-							>
-
-							<div class="text-center delimiter-login">OR</div>
-							<div
-								class="d-flex flex-column justify-content-center"
-							>
-								<form>
-									<div class="form-group">
-										<input
-											type="email"
-											class="form-control mb-3"
-											id="email1"
-											placeholder="Your email address"
-										/>
-									</div>
-									<div class="form-group">
-										<input
-											type="password"
-											class="form-control mb-3"
-											id="password1"
-											placeholder="Your password"
-										/>
-									</div>
-									<button
-										type="button"
-										class="btn btn-block btn-round login-button shadow-none text-white w-100"
-									>
-										Login
-									</button>
-								</form>
-							</div>
-						</div>
-					</div>
-					<div
-						class="modal-footer d-flex flex-column justify-content-center pt-1 pb-1"
-					>
-						<div class="signup-section pb-0">
-							Not a member yet?
-							<a href="#a"> Sign Up!</a>
-						</div>
-						<div class="signup-section pt-1 pb-3 pb-sm-0">
-							<a href="#a"> Forgot Password?</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
+		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 		<!--Header Ends-->
-
-		<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
 
 		<script>
 			window.onresize = function () {
@@ -479,10 +479,13 @@
 					'rotate(0deg) translate(0px,0px)';
 				document.getElementById('bar2').style.opacity = '1';
 				document.getElementById('notnav').style.display = 'none';
+
+				addNavBorder();
 			};
 
 			window.onscroll = function () {
 				navchange();
+				addNavBorder();
 			};
 
 			var lFollowX = 0,
@@ -522,11 +525,15 @@
 			moveBackground();
 
 			var loginModal = document.getElementById('loginModal');
-			loginModal.addEventListener('hide.bs.modal', function (event) {
-				setTimeout(() => {
-					document.getElementById('navbar').scrollTo(0, 0);
-				}, 350);
-			});
+			if (loginModal) {
+				loginModal.addEventListener('hide.bs.modal', function (event) {
+					setTimeout(() => {
+						document.getElementById('navbar').scrollTo(0, 0);
+					}, 350);
+				});
+			}
+
+			typingEffect(0, defaultSpeed);
 		</script>
 	</body>
 </html>
