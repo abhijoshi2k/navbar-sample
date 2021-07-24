@@ -63,6 +63,7 @@
 	text-decoration: none;
 	position: relative;
 	height: 54px;
+	cursor: pointer;
 }
 
 .navbar-list {
